@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "legal-court-mcp-server"
+version = "0.1.0"
+description = "MCP Server for court decisions, case law, and legal research — CourtListener (3M+ cases) and EUR-Lex"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "AiAgentKarl", email = "coach1916@gmail.com"}
+]
+keywords = ["mcp", "legal", "court", "case-law", "courtlistener", "eur-lex", "ai-agent"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/legal-court-mcp-server"
+Repository = "https://github.com/AiAgentKarl/legal-court-mcp-server"
+Issues = "https://github.com/AiAgentKarl/legal-court-mcp-server/issues"
+
+[project.scripts]
+legal-court-server = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
